@@ -22,6 +22,10 @@
 
 Not sure which chip you have? Apple menu  → **About This Mac** → look for **Chip** (Apple Silicon) or **Processor** (Intel).
 
+### Windows
+
+A **Windows 10 / 11 (x64)** installer (`.exe`) and portable build will be published to this repository's [Releases](https://github.com/udhaybhat00/copycat/releases). Watch the releases page for the Windows download.
+
 ## Table of contents
 
 - [What is Copycat?](#what-is-copycat)
@@ -69,6 +73,7 @@ Use Copycat for:
 | **Storage** | ~1 GB free disk space |
 | **Permissions** | Microphone, Screen Recording, and Accessibility (prompted on first run) |
 | **LLM access** | Your own API key (BYOK) for AI features |
+| **Windows** | Windows 10/11 (x64) — coming soon |
 
 > **Windows:** a Windows build is in development and is not part of this release yet. Watch this repository for announcements.
 
