@@ -165,7 +165,7 @@ The `.zip` assets in each release are the **auto-update archives**. Install Copy
 ## Support
 
 - **Bugs & feature requests:** [open an issue](https://github.com/udhaybhat00/copycat/issues)
-- **License keys & activation help:** **udhay07052004@gmail.com**
+- **License keys & activation help:** **udhaybhat00@gmail.com**
 - **Website:** [copycat-free.netlify.app](https://udhaybhat00.github.io/copycat/)
 
 ## About this repository
