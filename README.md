@@ -107,7 +107,7 @@ Use Copycat for:
 
 Copycat is **free to download and use**. **Copycat Pro** is unlocked with a license key.
 
-- **Get a Pro key:** contact the creator at **udhay07052004@gmail.com**.
+- **Get a Pro key:** contact the creator at **udhaybhat00@gmail.com**.
 - **Single-machine keys** activate one Mac. **Universal keys** work across all your devices.
 - **Activate:** open **Settings → Copycat Pro** and paste your key.
 - Activation is verified against a live license server, so **revoked or expired keys stop working immediately**.
@@ -121,7 +121,7 @@ Copycat Pro adds advanced capabilities for high-stakes conversations:
 - **Unlimited RAG knowledge memory** across meetings
 - **Priority access** to new features and builds
 
-Get a key: **udhay07052004@gmail.com**
+Get a key: **udhaybhat00@gmail.com**
 
 ## Frequently asked questions
 
@@ -147,7 +147,7 @@ Not yet. The current release is macOS-only; a Windows build is in development.
 The app is not notarized yet. Right-click → **Open** on first launch to bypass Gatekeeper for this build.
 
 **How do I get a Copycat Pro key?**
-Email **udhay07052004@gmail.com** to request a key.
+Email **udhaybhat00@gmail.com** to request a key.
 
 ## Privacy & security
 
@@ -176,7 +176,7 @@ This repository is the **official distribution hub** for Copycat. It publishes:
 - Auto-update archives (`.zip`) and the `latest-mac.yml` update manifest
 - Release notes and version history
 
-**No application source code is published here.** For licensing, distribution, or partnership questions, contact **udhay07052004@gmail.com**.
+**No application source code is published here.** For licensing, distribution, or partnership questions, contact **udhaybhat00@gmail.com**.
 
 ---
 
