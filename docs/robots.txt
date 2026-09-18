@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://udhaybhat00.github.io/copycat/sitemap.xml

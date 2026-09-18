@@ -8,7 +8,7 @@
 [![Forks](https://img.shields.io/github/forks/udhaybhat00/copycat?style=social&label=Forks)](https://github.com/udhaybhat00/copycat/network)
 [![Platform](https://img.shields.io/badge/platform-macOS%2012%2B%20%C2%B7%20Intel%20%26%20Apple%20Silicon-000000?logo=apple)](https://github.com/udhaybhat00/copycat/releases)
 [![License](https://img.shields.io/badge/license-Proprietary%20%C2%B7%20free%20to%20use-3b82f6)](./LICENSE.md)
-[![Website](https://img.shields.io/badge/website-copycat--free.netlify.app-ff5ccd?logo=googlechrome)](https://copycat-free.netlify.app/)
+[![Website](https://img.shields.io/badge/website-copycat--free.netlify.app-ff5ccd?logo=googlechrome)](https://udhaybhat00.github.io/copycat/)
 
 > **This repository is the official download hub for Copycat.** It hosts the macOS installers, auto-update archives, and release notes only — **the source code is not published here.**
 
@@ -166,7 +166,7 @@ The `.zip` assets in each release are the **auto-update archives**. Install Copy
 
 - **Bugs & feature requests:** [open an issue](https://github.com/udhaybhat00/copycat/issues)
 - **License keys & activation help:** **udhay07052004@gmail.com**
-- **Website:** [copycat-free.netlify.app](https://copycat-free.netlify.app/)
+- **Website:** [copycat-free.netlify.app](https://udhaybhat00.github.io/copycat/)
 
 ## About this repository
 

@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copycat — Free AI Meeting Assistant for Mac (Whisper · BYOK · Local-First)</title>
+  <meta name="description" content="Copycat is a free, local-first AI meeting assistant for macOS. On-device Whisper transcription, real-time answers, automatic meeting notes, and RAG knowledge memory — with your own LLM keys (BYOK). Download for Apple Silicon & Intel Mac.">
+  <meta name="keywords" content="AI meeting assistant, free AI assistant for Mac, real-time transcription, Whisper transcription macOS, on-device speech to text, BYOK LLM, interview prep AI, meeting notes AI, local-first AI, privacy-first AI, download Copycat macOS, Apple Silicon AI assistant, Intel Mac AI assistant">
+  <meta name="author" content="Udhay Bhat">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0d0f17">
+  <meta property="og:site_name" content="Copycat">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://udhaybhat00.github.io/copycat/">
+  <meta property="og:title" content="Copycat — Personal AI Assistant for Mac &amp; Windows">
+  <meta property="og:description" content="Real-time AI that listens, watches, and whispers answers — in meetings, interviews, sales calls, lectures, and support.">
+  <meta property="og:image" content="https://udhaybhat00.github.io/copycat/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Copycat — the private AI meeting assistant for macOS and Windows">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://udhaybhat00.github.io/copycat/">
+  <meta name="twitter:title" content="Copycat — Personal AI Assistant for Mac &amp; Windows">
+  <meta name="twitter:description" content="Real-time AI that listens, watches, and whispers answers — in meetings, interviews, sales calls, lectures, and support.">
+  <meta name="twitter:image" content="https://udhaybhat00.github.io/copycat/og-image.png">
+  <meta name="twitter:image:alt" content="Copycat — the private AI meeting assistant for macOS and Windows">
+  <link rel="canonical" href="https://udhaybhat00.github.io/copycat/">
+  <meta name="msapplication-TileColor" content="#0d0f17">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://udhaybhat00.github.io/copycat/icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://udhaybhat00.github.io/copycat/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://udhaybhat00.github.io/copycat/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Copycat",
+    "description": "Personal AI assistant for Mac & Windows with real-time transcription, screen capture, knowledge memory, and privacy-first local processing.",
+    "operatingSystem": "macOS 12+, Windows 10+",
+    "applicationCategory": "DesktopApplication",
+    "url": "https://udhaybhat00.github.io/copycat/",
+    "downloadUrl": "https://github.com/udhaybhat00/copycat/releases/latest",
+    "sameAs": ["https://github.com/udhaybhat00/copycat"],
+    "logo": "https://udhaybhat00.github.io/copycat/icon.png",
+    "thumbnailUrl": "https://udhaybhat00.github.io/copycat/icon.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "softwareVersion": "1.0.0"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Copycat free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Copycat is free to download and use for personal use. Copycat Pro is an optional paid upgrade unlocked with a license key; it never adds telemetry or accounts." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Copycat work offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Transcription and meeting memory are local-first and run on your Mac with on-device Whisper. AI answer generation uses your own LLM provider (BYOK), so those requests need internet access unless you point them at a local model such as Ollama." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my audio uploaded anywhere?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Audio is captured and transcribed on-device with Whisper. Only the text you choose to send to your configured LLM provider ever leaves your machine." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Macs are supported?",
+        "acceptedAnswer": { "@type": "Answer", "text": "macOS 12 or later on Apple Silicon (M1/M2/M3/M4) and Intel (x64) Macs. Download the arm64 build for Apple Silicon and the Intel build for older Macs." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an API key to use Copycat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "AI answer generation uses bring-your-own-key (BYOK) LLMs such as OpenAI, Anthropic, or a local Ollama model — so you control the provider and cost, and no account is required to download the app." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a Windows version of Copycat?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Not yet. The current release is macOS-only; a Windows 10/11 x64 build is in development and will be published on the GitHub Releases page." }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does macOS say the developer cannot be verified?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The build is not notarized yet, so Gatekeeper shows a security warning on first launch. Right-click (Control-click) the app and choose Open — you only need to do this once." }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0d0f17;
+      --bg-card: #161822;
+      --bg-card-hover: #1c1e2a;
+      --border: #262938;
+      --text: #d0d6e4;
+      --text-muted: #6e7793;
+      --magenta: #ff5ccd;
+      --cyan: #5be8ff;
+      --magenta-dim: #cc4aa3;
+      --cyan-dim: #4abfcc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+    /* ── Navigation ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,15,23,.82);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px;
+      letter-spacing: -.03em;
+    }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 8px; }
+    .nav-logo span { color: #fff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); font-size: 14px; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta {
+      padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+      background: var(--magenta); color: #fff;
+      transition: all .25s cubic-bezier(.4,0,.2,1);
+    }
+    .nav-cta:hover { background: #e64fb8; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(255,92,204,.3); }
+
+    /* Mobile nav toggle */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span {
+      display: block; width: 22px; height: 2px; background: var(--text);
+      margin: 5px 0; transition: all .3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      position: relative; padding: 120px 24px 80px; text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -40%; left: -20%; width: 80%; height: 80%;
+      background: radial-gradient(circle, rgba(255,92,204,.08) 0%, transparent 60%);
+      animation: floatBlob 20s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -30%; right: -15%; width: 70%; height: 70%;
+      background: radial-gradient(circle, rgba(91,232,255,.06) 0%, transparent 60%);
+      animation: floatBlob 16s ease-in-out infinite alternate-reverse;
+      pointer-events: none;
+    }
+    @keyframes floatBlob { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(40px,-30px) scale(1.1)} }
+    .hero-content { position: relative; z-index: 2; max-width: 900px; }
+    .hero-icon {
+      width: 80px; height: 80px; border-radius: 20px; margin: 0 auto 32px;
+      box-shadow: 0 8px 40px rgba(255,92,204,.2), 0 0 0 1px rgba(255,255,255,.05);
+      animation: iconPulse 3s ease-in-out infinite;
+    }
+    @keyframes iconPulse { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    .hero-badge {
+      display: inline-block; padding: 6px 16px; border-radius: 100px;
+      background: rgba(255,92,204,.08); border: 1px solid rgba(255,92,204,.2);
+      font-size: 13px; font-weight: 600; color: var(--magenta);
+      margin-bottom: 24px; letter-spacing: .04em;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 80px); font-weight: 900; line-height: 1.05;
+      letter-spacing: -.04em; margin-bottom: 20px;
+    }
+    .hero h1 .glow { background: linear-gradient(135deg, var(--magenta), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p {
+      font-size: 18px; color: var(--text-muted); max-width: 600px;
+      margin: 0 auto 40px; line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px;
+      border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer;
+      border: none; transition: all .3s cubic-bezier(.4,0,.2,1); position: relative; overflow: hidden;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--magenta), #d946ef); color: #fff;
+      box-shadow: 0 4px 24px rgba(255,92,204,.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,92,204,.35); }
+    .btn-secondary {
+      background: var(--bg-card); color: var(--text); border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center; margin-top: 60px; flex-wrap: wrap;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-size: 28px; font-weight: 800; color: #fff; display: block; }
+    .hero-stat .label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* ── Glass card ── */
+    .glass-preview {
+      margin-top: 64px; max-width: 720px; margin-left: auto; margin-right: auto;
+      background: rgba(22,24,34,.6); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2px; box-shadow: 0 24px 80px rgba(0,0,0,.5);
+    }
+    .glass-preview-inner { padding: 40px; text-align: left; border-radius: 14px; background: linear-gradient(145deg, rgba(255,92,204,.04), rgba(91,232,255,.04)); }
+    .glass-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--magenta); margin-bottom: 12px; }
+    .glass-preview-inner p { color: var(--text); line-height: 1.7; }
+    .glass-preview-inner .sources { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .glass-preview-inner .source {
+      padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+      background: rgba(91,232,255,.08); color: var(--cyan); border: 1px solid rgba(91,232,255,.15);
+    }
+
+    /* ── Section shared ── */
+    .section { padding: 120px 0; position: relative; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header .tag {
+      display: inline-block; padding: 5px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 16px;
+    }
+    .tag-magenta { background: rgba(255,92,204,.1); color: var(--magenta); border: 1px solid rgba(255,92,204,.2); }
+    .tag-cyan { background: rgba(91,232,255,.1); color: var(--cyan); border: 1px solid rgba(91,232,255,.2); }
+    .tag-white { background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.1); }
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -.03em;
+      line-height: 1.15; margin-bottom: 16px; color: #fff;
+    }
+    .section-header p { font-size: 17px; color: var(--text-muted); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Features grid ── */
+    .features-grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .features-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .feature-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 32px; transition: all .35s cubic-bezier(.4,0,.2,1); position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--magenta), var(--cyan));
+      opacity: 0; transition: opacity .3s;
+    }
+    .feature-card:hover { border-color: rgba(255,92,204,.3); background: var(--bg-card-hover); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.3); }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card.wide { grid-column: span 2; }
+    .feature-card.full { grid-column: span 3; }
+    .feature-card .icon {
+      width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+    .icon-magenta { background: rgba(255,92,204,.1); }
+    .icon-cyan { background: rgba(91,232,255,.1); }
+    .icon-green { background: rgba(52,211,153,.1); }
+    .icon-purple { background: rgba(167,139,250,.1); }
+    .icon-orange { background: rgba(251,146,60,.1); }
+    .icon-blue { background: rgba(96,165,250,.1); }
+    .feature-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -.02em; }
+    .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+    .feature-card ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+    .feature-card li {
+      padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500;
+      background: rgba(255,255,255,.04); color: var(--text-muted); border: 1px solid rgba(255,255,255,.06);
+    }
+
+    /* ── Providers ── */
+    .providers-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px;
+    }
+    .provider-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px 16px; text-align: center; transition: all .3s;
+    }
+    .provider-card:hover { border-color: var(--cyan); transform: translateY(-2px); }
+    .provider-card .name { font-size: 14px; font-weight: 600; color: #fff; margin-top: 8px; }
+    .provider-card .sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ── Modes ── */
+    .modes-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; }
+    .modes-nav { display: flex; flex-direction: column; gap: 4px; }
+    .mode-btn {
+      padding: 12px 16px; border-radius: 10px; border: 1px solid transparent;
+      background: transparent; color: var(--text-muted); font-size: 14px; font-weight: 500;
+      cursor: pointer; text-align: left; transition: all .25s; font-family: inherit;
+    }
+    .mode-btn:hover { color: #fff; background: rgba(255,255,255,.03); }
+    .mode-btn.active {
+      background: rgba(255,92,204,.08); border-color: rgba(255,92,204,.2);
+      color: var(--magenta); font-weight: 600;
+    }
+    .mode-panel {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 36px; min-height: 260px;
+    }
+    .mode-panel .tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--magenta); margin-bottom: 12px; }
+    .mode-panel h3 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 12px; letter-spacing: -.03em; }
+    .mode-panel .what { font-size: 16px; color: var(--text); margin-bottom: 12px; line-height: 1.6; }
+    .mode-panel .how { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+    .mode-panel ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .mode-panel li {
+      padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 500;
+      background: rgba(91,232,255,.06); color: var(--cyan); border: 1px solid rgba(91,232,255,.12);
+    }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── Privacy / CTA ── */
+    .privacy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .privacy-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px 20px; text-align: center; transition: all .3s;
+    }
+    .privacy-card:hover { transform: translateY(-2px); border-color: rgba(52,211,153,.3); }
+    .privacy-card .icon { font-size: 28px; margin-bottom: 12px; }
+    .privacy-card h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .privacy-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    .cta-section {
+      text-align: center; padding: 100px 24px;
+      background: linear-gradient(180deg, transparent, rgba(255,92,204,.03), transparent);
+    }
+    .cta-section h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; letter-spacing: -.03em; margin-bottom: 16px; color: #fff; }
+    .cta-section p { font-size: 17px; color: var(--text-muted); margin-bottom: 40px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--border); padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 32px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; }
+    .footer-brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .footer-brand span { font-weight: 700; font-size: 16px; color: #fff; }
+    .footer-brand-desc { font-size: 13px; color: var(--text-muted); margin-top: 8px; max-width: 260px; line-height: 1.6; }
+    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 14px; color: var(--text); margin-bottom: 10px; transition: color .2s; }
+    .footer-col a:hover { color: var(--cyan); }
+    .footer-bottom {
+      margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--text-muted); }
+
+    /* ── Scroll animations ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .5s cubic-bezier(.4,0,.2,1), transform .5s cubic-bezier(.4,0,.2,1); }
+    .reveal-stagger.visible > *:nth-child(1) { transition-delay: .05s; }
+    .reveal-stagger.visible > *:nth-child(2) { transition-delay: .1s; }
+    .reveal-stagger.visible > *:nth-child(3) { transition-delay: .15s; }
+    .reveal-stagger.visible > *:nth-child(4) { transition-delay: .2s; }
+    .reveal-stagger.visible > *:nth-child(5) { transition-delay: .25s; }
+    .reveal-stagger.visible > *:nth-child(6) { transition-delay: .3s; }
+    .reveal-stagger.visible > *:nth-child(n+7) { transition-delay: .35s; }
+    .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+
+    /* ── Floating particles ── */
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .particle {
+      position: absolute; border-radius: 50%; opacity: .15;
+      animation: particleDrift linear infinite;
+    }
+    @keyframes particleDrift {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: .15; }
+      90% { opacity: .15; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── Tech stack marquee ── */
+    .tech-marquee {
+      overflow: hidden; padding: 24px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .marquee-track {
+      display: flex; gap: 48px; animation: marqueeScroll 40s linear infinite; width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .tech-item { font-size: 14px; font-weight: 600; color: var(--text-muted); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+    .tech-item .dot { width: 6px; height: 6px; border-radius: 50%; }
+    @keyframes marqueeScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-card.wide { grid-column: span 2; }
+      .feature-card.full { grid-column: span 2; }
+      .privacy-grid { grid-template-columns: repeat(2, 1fr); }
+      .modes-wrap { grid-template-columns: 1fr; gap: 24px; }
+      .modes-nav { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+      .mode-btn { padding: 8px 14px; font-size: 13px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+      /* Mobile menu open */
+      .nav.open .nav-links {
+        display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(13,15,23,.96); backdrop-filter: blur(24px); padding: 16px 24px 24px;
+        border-bottom: 1px solid var(--border); gap: 16px;
+      }
+      .nav.open .nav-cta-mobile { display: inline-block; }
+      .nav-cta-mobile {
+        display: none; margin-top: 8px; padding: 10px 24px; border-radius: 8px; font-size: 14px;
+        font-weight: 600; background: var(--magenta); color: #fff; text-align: center;
+      }
+      .features-grid { grid-template-columns: 1fr; }
+      .feature-card.wide, .feature-card.full { grid-column: span 1; }
+      .privacy-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 36px; }
+      .hero-stats { gap: 24px; }
+      .hero-stat .num { font-size: 22px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    /* ── Floating Orb Glow ── */
+    .orb {
+      position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0;
+    }
+    .orb-magenta { background: rgba(255,92,204,.12); }
+    .orb-cyan { background: rgba(91,232,255,.1); }
+
+    /* ── Divider ── */
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--magenta), var(--cyan)); margin: 0 auto; border-radius: 1px; }
+
+    /* ── Keyboard shortcut ── */
+    .kbd {
+      display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 12px; font-weight: 600;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: var(--text);
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Floating Particles ── -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ── Navigation ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="https://udhaybhat00.github.io/copycat/icon.png" alt="Copycat" width="32" height="32">
+        <span>Copycat</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#providers">Providers</a></li>
+        <li><a href="#modes">Modes</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#premium">Premium</a></li>
+        <li><a href="https://github.com/udhaybhat00/copycat" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <a href="#download" class="nav-cta">Download</a>
+      <a href="#download" class="nav-cta-mobile" style="display:none;">Download Copycat</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="orb orb-magenta" style="width:500px;height:500px;top:-10%;left:-10%;"></div>
+    <div class="orb orb-cyan" style="width:400px;height:400px;bottom:-5%;right:-8%;"></div>
+    <div class="hero-content">
+      <img src="https://udhaybhat00.github.io/copycat/icon.png" alt="Copycat icon" class="hero-icon" width="80" height="80">
+      <div class="hero-badge">v1.0 — Mac &amp; Windows</div>
+      <h1>Your AI that <span class="glow">listens, watches &amp; whispers</span></h1>
+      <p>Real-time transcription, screen awareness, and contextual answers — right when you need them. 99 languages, 11+ providers, fully local &amp; private.</p>
+      <div class="hero-buttons">
+        <a href="#download" class="btn btn-primary">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download Free
+        </a>
+        <a href="https://github.com/udhaybhat00/copycat/releases" class="btn btn-secondary" target="_blank" rel="noopener">View Releases</a>
+        <a href="https://github.com/udhaybhat00/copycat" class="btn btn-secondary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.401 8.168L12 18.897l-7.335 3.857 1.401-8.168L.132 9.211l8.2-1.193z" stroke="#ff5ccd" stroke-width="0.6"/></svg>
+          Star on GitHub
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num">99</span><span class="label">Languages</span></div>
+        <div class="hero-stat"><span class="num">11+</span><span class="label">Providers</span></div>
+        <div class="hero-stat"><span class="num">9</span><span class="label">Modes</span></div>
+        <div class="hero-stat"><span class="num">100%</span><span class="label">Private</span></div>
+      </div>
+      <div class="glass-preview">
+        <div class="glass-preview-inner">
+          <div class="glass-label">Live Assist Preview</div>
+          <p><strong>Speaker:</strong> "We need to decide on the API rate limiting strategy by Friday — the current 100 req/min is too low for enterprise clients."</p>
+          <p style="margin-top:12px;"><strong style="color:var(--cyan);">Copycat:</strong> Suggest token-bucket rate limiting at 1000 req/min with burst allowance. Industry standard for B2B SaaS. Consider per-user vs per-org tiers. <span class="kbd" style="margin-left:4px;">⌘⇧Y</span></p>
+          <div class="sources">
+            <span class="source">Confidence: High</span>
+            <span class="source">Source: Knowledge Base</span>
+            <span class="source">Mode: Team meet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tech Stack Marquee ── -->
+  <div class="tech-marquee">
+    <div class="marquee-track" id="marquee">
+      <span class="tech-item"><span class="dot" style="background:var(--magenta)"></span>Electron</span>
+      <span class="tech-item"><span class="dot" style="background:var(--cyan)"></span>Rust + napi-rs</span>
+      <span class="tech-item"><span class="dot" style="background:#34d399"></span>Whisper ONNX</span>
+      <span class="tech-item"><span class="dot" style="background:#a78bfa"></span>React</span>
+      <span class="tech-item"><span class="dot" style="background:#fbbf24"></span>sqlite-vec</span>
+      <span class="tech-item"><span class="dot" style="background:#f87171"></span>cpal</span>
+      <span class="tech-item"><span class="dot" style="background:#60a5fa"></span>CoreML</span>
+      <span class="tech-item"><span class="dot" style="background:var(--magenta)"></span>Node.js</span>
+      <span class="tech-item"><span class="dot" style="background:var(--cyan)"></span>ONNX Runtime</span>
+      <span class="tech-item"><span class="dot" style="background:#34d399"></span>Dynamic Island UI</span>
+      <span class="tech-item"><span class="dot" style="background:#a78bfa"></span>WebSocket</span>
+      <span class="tech-item"><span class="dot" style="background:#fbbf24"></span>Cross-Encoder Reranker</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="tech-item"><span class="dot" style="background:var(--magenta)"></span>Electron</span>
+      <span class="tech-item"><span class="dot" style="background:var(--cyan)"></span>Rust + napi-rs</span>
+      <span class="tech-item"><span class="dot" style="background:#34d399"></span>Whisper ONNX</span>
+      <span class="tech-item"><span class="dot" style="background:#a78bfa"></span>React</span>
+      <span class="tech-item"><span class="dot" style="background:#fbbf24"></span>sqlite-vec</span>
+      <span class="tech-item"><span class="dot" style="background:#f87171"></span>cpal</span>
+      <span class="tech-item"><span class="dot" style="background:#60a5fa"></span>CoreML</span>
+      <span class="tech-item"><span class="dot" style="background:var(--magenta)"></span>Node.js</span>
+      <span class="tech-item"><span class="dot" style="background:var(--cyan)"></span>ONNX Runtime</span>
+      <span class="tech-item"><span class="dot" style="background:#34d399"></span>Dynamic Island UI</span>
+      <span class="tech-item"><span class="dot" style="background:#a78bfa"></span>WebSocket</span>
+      <span class="tech-item"><span class="dot" style="background:#fbbf24"></span>Cross-Encoder Reranker</span>
+    </div>
+  </div>
+
+  <!-- ── Core Features ── -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag tag-magenta">Core Capabilities</div>
+        <h2>Everything you need,<br>nothing you don't</h2>
+        <p>Real-time AI assistance with live transcription, screen awareness, knowledge memory, and intelligent automation — built for privacy.</p>
+      </div>
+      <div class="features-grid reveal-stagger">
+
+        <!-- Real-time AI -->
+        <div class="feature-card">
+          <div class="icon icon-magenta">💬</div>
+          <h3>Real-time AI Assist</h3>
+          <p>Live transcript streaming with instant contextual answers, source citations, and confidence labels — right when the speaker is talking.</p>
+          <ul>
+            <li>Live transcript</li>
+            <li>Source citations</li>
+            <li>Confidence labels</li>
+            <li>Streaming answers</li>
+          </ul>
+        </div>
+
+        <!-- Auto Answer -->
+        <div class="feature-card">
+          <div class="icon icon-cyan">⚡</div>
+          <h3>Auto Answer v3</h3>
+          <p>Dynamic Action Cards that generate with rich content and context menus. AI-driven suggestions as the conversation unfolds.</p>
+          <ul>
+            <li>Action Cards</li>
+            <li>Context menus</li>
+            <li>Auto-suggestions</li>
+            <li>Code verification ✓</li>
+          </ul>
+        </div>
+
+        <!-- Direct Assist -->
+        <div class="feature-card">
+          <div class="icon icon-green">🌊</div>
+          <h3>Direct Assist</h3>
+          <p>Streaming chat with follow-up questions and ambient AI. Ask anything without interrupting the conversation flow.</p>
+          <ul>
+            <li>Streaming chat</li>
+            <li>Follow-ups</li>
+            <li>Ambient mode</li>
+            <li>Non-intrusive</li>
+          </ul>
+        </div>
+
+        <!-- Transcription -->
+        <div class="feature-card wide">
+          <div class="icon icon-purple">🎙️</div>
+          <h3>Whisper Transcription</h3>
+          <p>On-device Whisper ONNX engine with speaker diarization, punctuation, and 99 language support. No cloud dependency for local mode. Device-based mic capture via Rust cpal for reliable, low-latency audio — with per-device config, noise suppression, and level meters.</p>
+          <ul>
+            <li>ONNX runtime</li>
+            <li>Speaker diarization</li>
+            <li>Punctuation</li>
+            <li>99 languages</li>
+            <li>Device capture</li>
+            <li>Level meters</li>
+          </ul>
+        </div>
+
+        <!-- Multi-provider -->
+        <div class="feature-card">
+          <div class="icon icon-orange">🔀</div>
+          <h3>Multi-provider</h3>
+          <p>Switch between 11+ providers at runtime: OpenAI, Claude, Gemini, Groq, Ollama, and more. BYOK — bring your own key.</p>
+          <ul>
+            <li>Runtime switching</li>
+            <li>BYOK</li>
+            <li>Local (Ollama)</li>
+          </ul>
+        </div>
+
+        <!-- Knowledge Memory -->
+        <div class="feature-card wide">
+          <div class="icon icon-cyan">🧠</div>
+          <h3>Knowledge Memory (RAG)</h3>
+          <p>Local embeddings with bundled cross-encoder reranker. Index notes, docs, and past conversations. sqlite-vec vector store for fast retrieval. Meeting search across global history and within active meetings.</p>
+          <ul>
+            <li>Local embeddings</li>
+            <li>Cross-encoder reranker</li>
+            <li>sqlite-vec</li>
+            <li>Notes &amp; docs</li>
+            <li>Meeting search</li>
+            <li>Past conversations</li>
+          </ul>
+        </div>
+
+        <!-- Context OS -->
+        <div class="feature-card">
+          <div class="icon icon-purple">🌐</div>
+          <h3>Context OS</h3>
+          <p>Assembles screen + transcript + DOM + knowledge into a unified context for the AI. The system window that understands everything happening on your screen.</p>
+          <ul>
+            <li>Screen context</li>
+            <li>DOM capture</li>
+            <li>Transcript</li>
+            <li>Unified assembly</li>
+          </ul>
+        </div>
+
+        <!-- Meeting Notes -->
+        <div class="feature-card">
+          <div class="icon icon-green">📝</div>
+          <h3>Meeting Notes</h3>
+          <p>Automatic summaries, decisions, and action items extracted from every meeting. Generative lecture notes from academic talks.</p>
+          <ul>
+            <li>Summaries</li>
+            <li>Decisions</li>
+            <li>Action items</li>
+            <li>Lecture notes</li>
+          </ul>
+        </div>
+
+        <!-- Profile & Career -->
+        <div class="feature-card">
+          <div class="icon icon-blue">👤</div>
+          <h3>Profile &amp; Career</h3>
+          <p>Upload your résumé, analyze job descriptions, get company intel dossiers, salary guidance, and AI-generated cover letters.</p>
+          <ul>
+            <li>Résumé indexing</li>
+            <li>JD analysis</li>
+            <li>Company intel</li>
+            <li>Cover letters</li>
+          </ul>
+        </div>
+
+        <!-- Screen & Visual -->
+        <div class="feature-card wide">
+          <div class="icon icon-magenta">👁️</div>
+          <h3>Screen &amp; Visual Intelligence</h3>
+          <p>Vision-first, vision-only, and vision-private modes. OCR + visual analysis. Selective screenshots via cropper. Browser extension page capture with <span class="kbd">⌘⇧Y</span>. DOM capture for web content understanding.</p>
+          <ul>
+            <li>Vision modes</li>
+            <li>OCR</li>
+            <li>Visual analysis</li>
+            <li>Screenshot cropper</li>
+            <li>Page capture</li>
+            <li>DOM capture</li>
+          </ul>
+        </div>
+
+        <!-- Stealth & Privacy -->
+        <div class="feature-card">
+          <div class="icon icon-green">🔒</div>
+          <h3>Stealth Mode</h3>
+          <p>Undetectable overlay, click-through mode, disguise options. Perfect for situations where discretion matters.</p>
+          <ul>
+            <li>Undetectable</li>
+            <li>Click-through</li>
+            <li>Disguise mode</li>
+          </ul>
+        </div>
+
+        <!-- Customization -->
+        <div class="feature-card">
+          <div class="icon icon-orange">⚙️</div>
+          <h3>Customization</h3>
+          <p>Configurable keybinds, themes (system/light/dark), floating overlay UI, multi-provider switching, open-at-login, and custom Skills with reference files.</p>
+          <ul>
+            <li>Keybinds</li>
+            <li>Themes</li>
+            <li>Overlay UI</li>
+            <li>Skills system</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Providers ── -->
+  <section class="section" id="providers">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag tag-cyan">AI Providers</div>
+        <h2>11+ providers. Your keys.</h2>
+        <p>Bring your own key and switch at runtime. Local mode with Ollama requires zero API keys.</p>
+      </div>
+      <div class="providers-grid reveal-stagger">
+        <div class="provider-card"><div style="font-size:28px;">🟢</div><div class="name">OpenAI</div><div class="sub">GPT-4o, Whisper API</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟠</div><div class="name">Claude</div><div class="sub">Anthropic</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🔵</div><div class="name">Gemini</div><div class="sub">Google</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟣</div><div class="name">Groq</div><div class="sub">Fast inference</div></div>
+        <div class="provider-card"><div style="font-size:28px;">⬜</div><div class="name">Ollama</div><div class="sub">Fully local</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🔴</div><div class="name">Deepgram</div><div class="sub">STT</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟤</div><div class="name">ElevenLabs</div><div class="sub">STT</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🔵</div><div class="name">Azure</div><div class="sub">STT</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟦</div><div class="name">IBM</div><div class="sub">STT</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟢</div><div class="name">Soniox</div><div class="sub">STT</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟢</div><div class="name">Nvidia NIM</div><div class="sub">STT</div></div>
+        <div class="provider-card"><div style="font-size:28px;">🟣</div><div class="name">Google STT</div><div class="sub">Speech-to-Text</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Modes ── -->
+  <section class="section" id="modes">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag tag-white">Modes</div>
+        <h2>9 built-in modes.<br>Unlimited custom.</h2>
+        <p>Each mode tailors the AI's behavior, context, and response style to your exact situation.</p>
+      </div>
+      <div class="modes-wrap reveal">
+        <div class="modes-nav" id="modesNav"></div>
+        <div class="mode-panel" id="modesPanel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Privacy ── -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag tag-magenta">Privacy &amp; Security</div>
+        <h2>Private by default.<br>Not by marketing.</h2>
+        <p>No telemetry, no phone-home, no analytics. Your data stays on your machine.</p>
+      </div>
+      <div class="privacy-grid reveal-stagger">
+        <div class="privacy-card">
+          <div class="icon">🚫</div>
+          <h4>No Telemetry</h4>
+          <p>Zero analytics, zero tracking, zero phone-home. The app never phones home.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="icon">💾</div>
+          <h4>Local-first</h4>
+          <p>All data stored locally on your machine. SQLite database, local embeddings, local vector store.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="icon">🔑</div>
+          <h4>BYOK</h4>
+          <p>Bring your own API keys. No account required, no data sent to our servers.</p>
+        </div>
+        <div class="privacy-card">
+          <div class="icon">👻</div>
+          <h4>Stealth Mode</h4>
+          <p>Undetectable overlay, click-through, disguise. Discretion when you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Premium ── -->
+  <section class="section" id="premium">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="tag tag-cyan">Copycat Pro</div>
+        <h2>Premium tier.<br>Same privacy, more power.</h2>
+        <p>Premium is a simple license key that unlocks all seven modes. It asks for your key the first time you pick a locked mode — no accounts, no telemetry.</p>
+      </div>
+      <div class="privacy-grid reveal-stagger">
+        <div class="privacy-card">
+          <div class="icon">🔑</div>
+          <h4>Get a License</h4>
+          <p>To get a license key, contact the creator: <strong>udhay07052004@gmail.com</strong> — then enter it via <strong>Settings → Copycat API</strong> to unlock all seven modes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section cta-section" id="download">
+    <div class="container reveal">
+      <h2>Download Copycat</h2>
+      <p>Free for personal use · macOS 12+ on Apple Silicon &amp; Intel · no account, no sign-up.</p>
+      <div class="hero-buttons" style="margin-top:40px; flex-wrap:wrap; gap:12px;">
+        <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64.dmg" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Apple Silicon · .dmg
+        </a>
+        <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0.dmg" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Intel · .dmg
+        </a>
+        <a href="https://github.com/udhaybhat00/copycat/releases" class="btn btn-secondary" target="_blank" rel="noopener">Windows (coming soon)</a>
+      </div>
+      <p style="margin-top:24px; font-size:14px; color:var(--text-muted);">Prefer the auto-update archive?
+        <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64-mac.zip" target="_blank" rel="noopener" style="color:var(--cyan);">Apple Silicon .zip</a> ·
+        <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-mac.zip" target="_blank" rel="noopener" style="color:var(--cyan);">Intel .zip</a> ·
+        <a href="https://github.com/udhaybhat00/copycat/releases" target="_blank" rel="noopener" style="color:var(--cyan);">all releases →</a>
+      </p>
+      <div style="margin-top:48px;" class="reveal">
+        <p style="font-size:14px; color:var(--text-muted); margin-bottom:12px;">Love Copycat? It helps the project grow.</p>
+        <div class="hero-buttons">
+          <a href="https://github.com/udhaybhat00/copycat" class="btn btn-secondary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.67.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            Star on GitHub
+          </a>
+          <a href="https://github.com/udhaybhat00/copycat/fork" class="btn btn-secondary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878z"/></svg>
+            Fork on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <img src="https://udhaybhat00.github.io/copycat/icon.png" alt="Copycat" width="28" height="28">
+            <span>Copycat</span>
+          </div>
+          <p class="footer-brand-desc">Personal AI assistant that listens, watches, and whispers answers — in real time.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#providers">Providers</a>
+          <a href="#modes">Modes</a>
+          <a href="#privacy">Privacy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="https://github.com/udhaybhat00/copycat" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/udhaybhat00/copycat/stargazers" target="_blank" rel="noopener">Star us on GitHub ⭐</a>
+          <a href="https://github.com/udhaybhat00/copycat/releases" target="_blank" rel="noopener">Releases</a>
+          <a href="https://github.com/udhaybhat00/copycat#readme" target="_blank" rel="noopener">Docs</a>
+          <a href="/sitemap.xml" rel="noopener">Sitemap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://github.com/udhaybhat00/copycat/blob/main/LICENSE.md" target="_blank" rel="noopener">License</a>
+          <a href="https://github.com/udhaybhat00/copycat/issues" target="_blank" rel="noopener">Support</a>
+          <a href="mailto:udhay07052004@gmail.com">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Copycat. Proprietary · free to use.</p>
+        <p>Not affiliated with any employer or platform.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll reveal ──
+    (function () {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) { obs.observe(el); });
+    })();
+
+    // ── Particles ──
+    (function () {
+      var c = document.getElementById('particles');
+      for (var i = 0; i < 30; i++) {
+        var p = document.createElement('div');
+        p.className = 'particle';
+        var size = Math.random() * 4 + 1;
+        var isCyan = Math.random() > 0.5;
+        p.style.cssText = 'width:' + size + 'px;height:' + size + 'px;left:' + (Math.random() * 100) + '%;background:' + (isCyan ? 'var(--cyan)' : 'var(--magenta)') + ';animation-duration:' + (Math.random() * 20 + 15) + 's;animation-delay:' + (Math.random() * 10) + 's;';
+        c.appendChild(p);
+      }
+    })();
+
+    // ── Mobile nav toggle ──
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var nav = document.getElementById('nav');
+      btn.addEventListener('click', function () { nav.classList.toggle('open'); });
+      // Show mobile CTA
+      var mobCta = nav.querySelector('.nav-cta-mobile');
+      if (mobCta) mobCta.style.display = nav.classList.contains('open') ? 'inline-block' : '';
+    })();
+
+    // ── Modes ──
+    (function () {
+      var modes = [
+        { name: "Interview", who: "Job seekers", what: "Turns interview prep from guesswork into a strategy session.", how: "Answers like a coach: structured, specific, and tied to the job description in your Knowledge Vault.", tags: ["STAR answers", "Role-aware", "Confidence building"] },
+        { name: "Looking for Work", who: "Active candidates", what: "Keeps your job search sharp — every answer is tied to the roles you're targeting.", how: "References your profile, résumé, and target JDs to keep every answer on-brand and on-message.", tags: ["Job targeting", "Profile-aware", "Application coaching"] },
+        { name: "Technical Interview", who: "Engineering candidates", what: "Handles system design, debugging, and coding questions without breaking a sweat.", how: "Keeps relevant specs, code conventions, and past projects in context so answers read like you wrote them.", tags: ["System design", "Code walkthrough", "Spec-aware"] },
+        { name: "Sales", who: "Sales reps", what: "Keeps the pitch moving and the objection log full.", how: "Tracks the prospect's concerns line by line, keeps competitor battlecards in context, and answers like a senior rep.", tags: ["Objection handling", "Battlecards", "Pitch tracking"] },
+        { name: "Recruiting", who: "Recruiters", what: "Lives in the req and reminds you what the candidate said — across every stage.", how: "Keeps the job description and candidate notes in context and summarizes each conversation against the role.", tags: ["Reqs & JDs", "Candidate notes", "Stage summaries"] },
+        { name: "Team meet", who: "Teams", what: "The meeting secretary that never misses an action item.", how: "Frames answers around owners, deadlines, and decisions so follow-ups are ready the moment the call ends.", tags: ["Action items", "Decisions", "Owners & dates"] },
+        { name: "Lecture", who: "Students", what: "Follows the syllabus and turns a dense lecture into a usable study sheet.", how: "Keeps the course material in context and adapts answers to the professor's pacing and notation.", tags: ["Syllabus-aware", "Study sheets", "Notation tracking"] },
+        { name: "Seminar", who: "Researchers", what: "Tracks technical depth without losing the thread of the talk.", how: "Keeps presentation specs and papers in context and answers in the room's technical register.", tags: ["Paper-aware", "Technical register", "Q&A support"] },
+        { name: "General", who: "Everyone", what: "A reliable co-pilot for any conversation, meeting, or brainstorm.", how: "Plain, grounded answers from the live transcript — no persona, just the facts of what was said.", tags: ["Grounded answers", "Live transcript", "Simple"] },
+        { name: "Call-center", who: "Support teams", what: "Built for high-volume, script-driven calls.", how: "Tracks known issues and the support script, and surfaces the likely fix while the customer is still talking.", tags: ["Known-issue lookup", "Script support", "Fast answers"] }
+      ];
+      var navEl = document.getElementById("modesNav");
+      var panel = document.getElementById("modesPanel");
+      function select(i) {
+        [].forEach.call(navEl.children, function (b, k) { b.classList.toggle("active", k === i); });
+        var m = modes[i];
+        panel.innerHTML = "";
+        panel.style.animation = "none"; void panel.offsetWidth; panel.style.animation = "";
+        var tag = document.createElement("div"); tag.className = "tag"; tag.textContent = "MODE · " + m.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+        var h = document.createElement("h3"); h.textContent = m.name;
+        var who = document.createElement("p"); who.className = "what"; who.innerHTML = "<b style='color:var(--cyan)'>For " + m.who + ".</b> " + m.what;
+        var how = document.createElement("p"); how.className = "how"; how.innerHTML = "<b>How it adapts:</b> " + m.how;
+        var ul = document.createElement("ul");
+        m.tags.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+        [tag, h, who, how, ul].forEach(function (n) { panel.appendChild(n); });
+      }
+      modes.forEach(function (m, i) {
+        var b = document.createElement("button");
+        b.className = "mode-btn"; b.type = "button"; b.textContent = m.name;
+        b.addEventListener("click", function () { select(i); });
+        navEl.appendChild(b);
+      });
+      select(0);
+    })();
+  </script>
+</body>
+</html>
