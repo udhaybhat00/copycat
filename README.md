@@ -4,10 +4,26 @@
 
 [![Latest release](https://img.shields.io/github/v/release/udhaybhat00/copycat?label=latest%20release&color=6366f1)](https://github.com/udhaybhat00/copycat/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/udhaybhat00/copycat/total?label=downloads&color=22c55e)](https://github.com/udhaybhat00/copycat/releases)
+[![Stars](https://img.shields.io/github/stars/udhaybhat00/copycat?style=social&label=Stars)](https://github.com/udhaybhat00/copycat/stargazers)
+[![Forks](https://img.shields.io/github/forks/udhaybhat00/copycat?style=social&label=Forks)](https://github.com/udhaybhat00/copycat/network)
 [![Platform](https://img.shields.io/badge/platform-macOS%2012%2B%20%C2%B7%20Intel%20%26%20Apple%20Silicon-000000?logo=apple)](https://github.com/udhaybhat00/copycat/releases)
 [![License](https://img.shields.io/badge/license-Proprietary%20%C2%B7%20free%20to%20use-3b82f6)](./LICENSE.md)
+[![Website](https://img.shields.io/badge/website-copycat--free.netlify.app-ff5ccd?logo=googlechrome)](https://copycat-free.netlify.app/)
 
 > **This repository is the official download hub for Copycat.** It hosts the macOS installers, auto-update archives, and release notes only — **the source code is not published here.**
+
+> ⭐ **[Found Copycat useful? Star this repository](https://github.com/udhaybhat00/copycat/stargazers)** — it takes one click and helps more people find the project.
+
+---
+
+## 👋 Say hi while you're here
+
+If Copycat helps you in an interview, a meeting, or a lecture, please:
+
+- ⭐ **[Star this repo](https://github.com/udhaybhat00/copycat/stargazers)** — your star pushes Copycat up in search and feeds the project.
+- 🍴 **[Fork this repo](https://github.com/udhaybhat00/copycat/fork)** — grab the download links and release assets into your own space.
+- 🐦 **Share it** with a teammate, classmate, or recruiter who could use a real-time AI copilot.
+- 🐛 **[Open an issue](https://github.com/udhaybhat00/copycat/issues)** for bugs or feature ideas — every report improves the next release.
 
 ---
 
@@ -17,8 +33,8 @@
 
 | Mac chip | Installer (.dmg) | Archive (auto-update) |
 |---|---|---|
-| **Apple Silicon** (M1 / M2 / M3 / M4) | [Copycat-1.0.0-arm64.dmg](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64.dmg) · 542 MB | [Copycat-1.0.0-arm64-mac.zip](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64-mac.zip) · 596 MB |
-| **Intel** (x64) | [Copycat-1.0.0.dmg](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0.dmg) · 557 MB | [Copycat-1.0.0-mac.zip](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-mac.zip) · 619 MB |
+| **Apple Silicon** (M1 / M2 / M3 / M4) | [Copycat-1.0.0-arm64.dmg](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64.dmg) · 802 MB | [Copycat-1.0.0-arm64-mac.zip](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64-mac.zip) · 644 MB |
+| **Intel** (x64) | [Copycat-1.0.0.dmg](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0.dmg) · 808 MB | [Copycat-1.0.0-mac.zip](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-mac.zip) · 649 MB |
 
 Not sure which chip you have? Apple menu  → **About This Mac** → look for **Chip** (Apple Silicon) or **Processor** (Intel).
 
