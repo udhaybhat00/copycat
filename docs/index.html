@@ -81,7 +81,7 @@
       {
         "@type": "Question",
         "name": "Is there a Windows version of Copycat?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Not yet. The current release is macOS-only; a Windows 10/11 x64 build is in development and will be published on the GitHub Releases page." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Windows 10/11 x64 builds ship in v1.0.0: Copycat-Setup-1.0.0.exe is the installer and Copycat.1.0.0.exe is a portable build that runs without installing. Both are free for personal use and download from the GitHub Releases page." }
       },
       {
         "@type": "Question",
@@ -830,7 +830,7 @@
   <section class="section cta-section" id="download">
     <div class="container reveal">
       <h2>Download Copycat</h2>
-      <p>Free for personal use · macOS 12+ on Apple Silicon &amp; Intel · no account, no sign-up.</p>
+      <p>Free for personal use · macOS 12+ on Apple Silicon &amp; Intel · Windows 10/11 x64 · no account, no sign-up.</p>
       <div class="hero-buttons" style="margin-top:40px; flex-wrap:wrap; gap:12px;">
         <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64.dmg" class="btn btn-primary" target="_blank" rel="noopener">
           <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -840,13 +840,18 @@
           <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Intel · .dmg
         </a>
-        <a href="https://github.com/udhaybhat00/copycat/releases" class="btn btn-secondary" target="_blank" rel="noopener">Windows (coming soon)</a>
+        <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-Setup-1.0.0.exe" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Windows · Installer
+        </a>
+        <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat.1.0.0.exe" class="btn btn-secondary" target="_blank" rel="noopener">Windows · Portable</a>
       </div>
       <p style="margin-top:24px; font-size:14px; color:var(--text-muted);">Prefer the auto-update archive?
         <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64-mac.zip" target="_blank" rel="noopener" style="color:var(--cyan);">Apple Silicon .zip</a> ·
         <a href="https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-mac.zip" target="_blank" rel="noopener" style="color:var(--cyan);">Intel .zip</a> ·
         <a href="https://github.com/udhaybhat00/copycat/releases" target="_blank" rel="noopener" style="color:var(--cyan);">all releases →</a>
       </p>
+      <p style="margin-top:10px; font-size:13px; color:var(--text-muted);">Windows build is unsigned, so SmartScreen may warn on first run — choose <strong>More info → Run anyway</strong>.</p>
       <div style="margin-top:48px;" class="reveal">
         <p style="font-size:14px; color:var(--text-muted); margin-bottom:12px;">Love Copycat? It helps the project grow.</p>
         <div class="hero-buttons">
