@@ -31,4 +31,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Contact
 
-License keys, permissions, and all other inquiries: **udhay07052004@gmail.com**
+License keys, permissions, and all other inquiries: **udhaybhat00@gmail.com**
