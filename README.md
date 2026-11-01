@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./assets/copycat-logo.png" alt="Copycat logo" width="100" height="100">
+
 ![Copycat — stay with the conversation](./assets/copycat-banner.svg)
 
 # Copycat
