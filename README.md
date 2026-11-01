@@ -1,202 +1,128 @@
-# Copycat — Free, Local-First AI Meeting Assistant for Mac & Windows
+<div align="center">
 
-**Copycat** is a free, local-first **AI meeting assistant for macOS and Windows** that listens to your calls, interviews, lectures, and team meetings in real time — transcribing **on-device** and whispering answers, notes, and context the moment you need them. Built for **Apple Silicon (M1 / M2 / M3 / M4)**, **Intel Macs**, and **Windows 10/11 (x64)**, it keeps your audio, transcripts, and meeting memory on your machine.
+![Copycat — stay with the conversation](./assets/copycat-banner.svg)
 
-[![Latest release](https://img.shields.io/github/v/release/udhaybhat00/copycat?label=latest%20release&color=6366f1)](https://github.com/udhaybhat00/copycat/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/udhaybhat00/copycat/total?label=downloads&color=22c55e)](https://github.com/udhaybhat00/copycat/releases)
-[![Stars](https://img.shields.io/github/stars/udhaybhat00/copycat?style=social&label=Stars)](https://github.com/udhaybhat00/copycat/stargazers)
-[![Forks](https://img.shields.io/github/forks/udhaybhat00/copycat?style=social&label=Forks)](https://github.com/udhaybhat00/copycat/network)
-[![Platform](https://img.shields.io/badge/platform-macOS%2012%2B%20%C2%B7%20Intel%20%26%20Apple%20Silicon-000000?logo=apple)](https://github.com/udhaybhat00/copycat/releases)
-[![Windows](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078d4?logo=windows)](https://github.com/udhaybhat00/copycat/releases)
-[![License](https://img.shields.io/badge/license-Proprietary%20%C2%B7%20free%20to%20use-3b82f6)](./LICENSE.md)
-[![Website](https://img.shields.io/badge/website-udhaybhat00.github.io/copycat-ff5ccd?logo=googlechrome)](https://udhaybhat00.github.io/copycat/)
+# Copycat
 
-> **This repository is the official download hub for Copycat.** It hosts the macOS installers, Windows installers, auto-update archives, and release notes only — **the source code is not published here.**
+### Your desktop conversation copilot.
 
-> ⭐ **[Found Copycat useful? Star this repository](https://github.com/udhaybhat00/copycat/stargazers)** — it takes one click and helps more people find the project.
+Live transcription, relevant context, and a clear space for answers — built for macOS and Windows.
 
----
+[![Download Copycat](https://img.shields.io/badge/Download-Copycat-c4b1ff?style=for-the-badge&logo=github&logoColor=15121f)](https://github.com/udhaybhat00/copycat/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/udhaybhat00/copycat?style=for-the-badge&color=353646&label=Latest)](https://github.com/udhaybhat00/copycat/releases/latest)
+[![Creator](https://img.shields.io/badge/Created_by-%40udhaybhat00-8ba4ff?style=for-the-badge&logo=github&logoColor=15121f)](https://github.com/udhaybhat00)
 
-## 👋 Say hi while you're here
+**10-minute free trial · $20/month after the trial · BYOK**
 
-If Copycat helps you in an interview, a meeting, or a lecture, please:
+[Website](https://copycat-by-udhay.netlify.app/) · [Download](https://github.com/udhaybhat00/copycat/releases/latest) · [Pricing & activation](#-pricing--activation) · [Privacy](#-privacy-by-configuration) · [Support](#-support)
 
-- ⭐ **[Star this repo](https://github.com/udhaybhat00/copycat/stargazers)** — your star pushes Copycat up in search and feeds the project.
-- 🍴 **[Fork this repo](https://github.com/udhaybhat00/copycat/fork)** — grab the download links and release assets into your own space.
-- 🐦 **Share it** with a teammate, classmate, or recruiter who could use a real-time AI copilot.
-- 🐛 **[Open an issue](https://github.com/udhaybhat00/copycat/issues)** for bugs or feature ideas — every report improves the next release.
+</div>
 
----
+> This is Copycat’s official **download and documentation repository**. It contains product assets, release notes, and links to installers. **Application source code is not published here.**
 
-## Download Copycat
+## A little less switching. A little more thinking.
 
-**Latest release: [v1.0.0](https://github.com/udhaybhat00/copycat/releases/latest)** — unsigned direct download, no account required.
+Copycat keeps the conversation, the question, and the response together in a compact desktop overlay. Use it to rehearse an interview, learn from a technical discussion, prepare a thoughtful response, or support a meeting where participants have agreed to recording and assistance.
 
-### macOS
+![Illustrative animated preview of live transcription and a streaming answer](./assets/copycat-preview.gif)
 
-| Mac chip | Installer (.dmg) | Archive (auto-update) |
-|---|---|---|
-| **Apple Silicon** (M1 / M2 / M3 / M4) | [Copycat-1.0.0-arm64.dmg](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64.dmg) · 802 MB | [Copycat-1.0.0-arm64-mac.zip](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-arm64-mac.zip) · 644 MB |
-| **Intel** (x64) | [Copycat-1.0.0.dmg](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0.dmg) · 808 MB | [Copycat-1.0.0-mac.zip](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-1.0.0-mac.zip) · 649 MB |
+<sub>Original illustrative product preview. The example conversation is fictional; it is not a performance benchmark or a recording of a customer.</sub>
 
-Not sure which chip you have? Apple menu  → **About This Mac** → look for **Chip** (Apple Silicon) or **Processor** (Intel).
+## ✨ A focused workspace
 
-### Windows
+| During the conversation | Around the conversation |
+| --- | --- |
+| **Live transcription** of meeting audio, with a meter driven by captured audio levels. | **Resume and profile context** to make preparation relevant to your experience. |
+| **Question → answer layout** with streamed responses, history navigation, and copy controls. | **Session context** that brings relevant earlier discussion into the current response. |
+| **Auto Answer** can respond when a question is complete; manual Answer remains available. | **Meeting notes** to review the conversation and its useful takeaways. |
+| **Resizable translucent overlay** with keyboard shortcuts and appearance preferences. | **Provider choice** for transcription and AI answers, including supported local models. |
 
-| Build | Download | Size |
-|---|---|---|
-| **Installer** (recommended) | [Copycat-Setup-1.0.0.exe](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-Setup-1.0.0.exe) | 779 MB |
-| **Portable** (runs without installing) | [Copycat.1.0.0.exe](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat.1.0.0.exe) | 779 MB |
+AI response time and recognition quality depend on your hardware, audio quality, selected models, and provider. Review generated answers before relying on them.
 
-The Windows build is not code-signed yet, so **Windows SmartScreen** may warn on first run — click **More info → Run anyway**.
+## 🎙️ From sound to something useful
 
-## Table of contents
+![Copycat workflow: listen, understand, respond, remember](./assets/copycat-workflow.svg)
 
-- [What is Copycat?](#what-is-copycat)
-- [Features](#features)
-- [System requirements](#system-requirements)
-- [Installation on macOS](#installation-on-macos)
-- [Installation on Windows](#installation-on-windows)
-- [License & activation](#license--activation)
-- [Copycat Pro (premium)](#copycat-pro-premium)
-- [Frequently asked questions](#frequently-asked-questions)
-- [Privacy & security](#privacy--security)
-- [Auto-updates](#auto-updates)
-- [Support](#support)
-- [About this repository](#about-this-repository)
+```text
+Your session
+├── Meeting audio
+│   ├── Real audio-level meter
+│   └── Local or configured transcription provider
+├── Relevant context
+│   ├── Current conversation
+│   ├── Earlier discussion in the same session
+│   └── Resume / profile, where relevant
+├── Your chosen AI provider
+│   └── Streamed response in the overlay
+└── Review
+    ├── Copy useful answers
+    └── Revisit session notes
+```
 
-## What is Copycat?
+Copycat listens to **meeting/system audio by default**, rather than opening your physical microphone. Audio permissions and capture capabilities vary by operating system. Review Settings before your session.
 
-Copycat is a **real-time AI assistant for macOS and Windows** that runs alongside your meetings and calls. It captures your microphone and system audio, transcribes speech with an **on-device Whisper** model, and uses **your own LLM API keys (BYOK)** to generate live answers, summaries, and meeting notes. Everything is designed to be **local-first and private** — your transcripts and knowledge memory stay on your own machine.
+## 📥 Download & start
 
-Use Copycat for:
+Open the [latest release](https://github.com/udhaybhat00/copycat/releases/latest) and choose the build matching your device:
 
-- **Job interviews & interview prep** — real-time answer suggestions
-- **Sales and support calls** — live objection handling and notes
-- **Lectures & classes** — transcription and automatic study notes
-- **Team meetings** — automatic meeting minutes and action items
-- **Coaching & training** — premium knowledge intercept
+| Device | Choose |
+| --- | --- |
+| 🍎 **Mac with Apple Silicon** | The `arm64` macOS build |
+| 💻 **Mac with an Intel processor** | The `x64` / Intel macOS build |
+| 🪟 **Windows 10/11, x64** | The Windows installer, or portable build if offered |
 
-## Features
+Available files, compatibility requirements, signing status, and known limitations are listed in each release. Download directly from this repository’s releases; do not install repackaged copies from other sites.
 
-- **🎙 On-device Whisper transcription** — accurate speech-to-text that runs locally; your audio never leaves your machine.
-- **⚡ Real-time answers** — contextual suggestions during the conversation in interview, lecture, and team-meet modes.
-- **📝 Automatic meeting notes** — summaries, key points, and action items generated after every session.
-- **🧠 RAG knowledge memory** — ask questions across your past meetings with retrieval-augmented answers.
-- **🔑 BYOK LLMs** — bring your own API keys (OpenAI, Anthropic, and more); you control the provider and cost.
-- **🛡 Premium knowledge intercept** — advanced coaching and interview intelligence (Copycat Pro).
-- **🖥 Native desktop app** — first-class builds for **Apple Silicon, Intel (x64), and Windows 10/11 (x64)**, with screen capture and mic/system-audio capture.
-- **💸 Free & local-first** — the core experience is free; no subscription required.
+1. Install the appropriate build and launch Copycat.
+2. Configure your transcription model and AI provider in **Settings**.
+3. Add your resume or profile if you want relevant preparation context.
+4. Start a session and use your **10-minute trial** to explore the workflow.
+5. Set your preferred shortcuts, transparency, cursor behavior, and Auto Answer in Settings.
 
-## System requirements
+**BYOK means bring your own key.** The Copycat subscription provides app access. Charges from an external AI or transcription provider are separate. A supported local model can avoid that provider’s per-request charges, subject to hardware requirements.
 
-| Requirement | Details |
-|---|---|
-| **Operating system** | macOS 12 (Monterey) or later · Windows 10/11 (x64) |
-| **Processor** | Apple Silicon (M1/M2/M3/M4), Intel (x64), or any x64 Windows PC |
-| **Memory** | 8 GB RAM recommended |
-| **Storage** | ~1 GB free disk space |
-| **Permissions** | Microphone on both platforms; Screen Recording and Accessibility on macOS (prompted on first run) |
-| **LLM access** | Your own API key (BYOK) for AI features |
+## 🔑 Pricing & activation
 
-> **Windows:** the build is unsigned, so SmartScreen may warn on first run — choose **More info → Run anyway**.
+### 10 minutes to try it. $20 per month to keep using it.
 
-## Installation on macOS
+- **Trial:** 10 minutes of free session experience, before the activation screen appears.
+- **Subscription:** **US$20/month** for access on your activated device.
+- **India:** the price is shown in **INR using the current USD–INR reference rate**. The displayed conversion is an estimate; your payment arrangement determines the final billed amount and any fees.
+- **Device activation:** activate the device once with your issued license key. Access continues while the subscription is valid. This is **monthly access, not a lifetime purchase**.
+- **Purchase request:** the app’s **Activate** button opens your default mail app with a professional request and your device ID already filled in. You review and send it yourself.
+- **Contact:** [udhaybhat00@gmail.com](mailto:udhaybhat00@gmail.com?subject=Copycat%20monthly%20subscription%20request).
 
-1. **Download** the correct `.dmg` for your chip from the [macOS table](#macos).
-2. Open the `.dmg` and **drag Copycat into your Applications folder**.
-3. **First launch:** right-click (or Control-click) the app icon and choose **Open**.
+Already have a key? Use the activation field in the app. For a renewal, device change, or activation problem, email the creator with your device ID and a description of the issue. Do not post your license key publicly.
 
-   The build is not notarized yet, so macOS Gatekeeper shows a *"cannot verify the developer"* warning on first launch — this is expected. Click **Open** to run it. You only need to do this once.
-4. Grant **Microphone**, **Screen Recording**, and **Accessibility** permissions when prompted (System Settings → Privacy & Security).
-5. Open **Settings → Copycat Pro** and paste your license key to unlock Pro features (see below).
+## 🔒 Privacy by configuration
 
-## Installation on Windows
+Copycat is designed around local desktop work, with clear provider choices:
 
-1. **Download** [Copycat-Setup-1.0.0.exe](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat-Setup-1.0.0.exe) from the [Windows table](#windows). Prefer not to install? Use the portable [Copycat.1.0.0.exe](https://github.com/udhaybhat00/copycat/releases/download/v1.0.0/Copycat.1.0.0.exe) instead — it runs straight from the download.
-2. **Installer:** run the `.exe` and follow the wizard. **Portable:** double-click and it starts immediately.
-3. **First run:** SmartScreen may show *"Windows protected your PC"* because the build is not code-signed yet. Click **More info → Run anyway**.
-4. Grant **Microphone** access when prompted (Settings → Privacy & security → Microphone).
-5. Open **Settings → Copycat Pro** and paste your license key to unlock Pro features (see below).
+- **Local transcription:** when you select a supported local speech model, recognition runs on your device.
+- **Cloud transcription:** when you select a cloud speech provider, audio is sent to that provider under its terms.
+- **AI answers:** prompts and the relevant context sent to a hosted AI model leave your device. Choose a supported local model if you want to keep that processing local.
+- **License service:** activation uses a device identifier and license status. It does not need your meeting audio, transcript, or AI-provider keys.
+- **Your controls:** review capture, transcript retention, model, and provider settings. Get consent where needed before recording or transcribing conversations.
 
-> Windows support ships for the first time in v1.0.0. If capture, audio, or transcription misbehaves on your machine, please [open an issue](https://github.com/udhaybhat00/copycat/issues) — reports from Windows users are especially useful.
+Copycat cannot guarantee invisibility to operating-system privacy indicators, screen-recording tools, or other software.
 
-## License & activation
+## 👨‍💻 Built by Udhay Bhat
 
-Copycat is **free to download and use**. **Copycat Pro** is unlocked with a license key.
+Created and maintained by **[Udhay Bhat · @udhaybhat00](https://github.com/udhaybhat00)**.
 
-- **Get a Pro key:** contact the creator at **udhaybhat00@gmail.com**.
-- **Single-machine keys** activate one machine. **Universal keys** work across all your devices.
-- **Activate:** open **Settings → Copycat Pro** and paste your key.
-- Activation is verified against a live license server, so **revoked or expired keys stop working immediately**.
-- Keys are personal — see [LICENSE.md](./LICENSE.md) for the full terms.
+[![Follow Udhay](https://img.shields.io/badge/GitHub-%40udhaybhat00-c4b1ff?style=flat-square&logo=github&logoColor=15121f)](https://github.com/udhaybhat00)
+[![Star Copycat](https://img.shields.io/github/stars/udhaybhat00/copycat?style=flat-square&color=8ba4ff&label=Star%20Copycat)](https://github.com/udhaybhat00/copycat)
 
-## Copycat Pro (premium)
+If Copycat helps your preparation or meetings, a star makes the project easier to discover. Thoughtful bug reports help improve it.
 
-Copycat Pro adds advanced capabilities for high-stakes conversations:
+## 💬 Support
 
-- **Premium knowledge intercept** for coaching, interviews, and training
-- **Unlimited RAG knowledge memory** across meetings
-- **Priority access** to new features and builds
+- **Bugs and suggestions:** [open an issue](https://github.com/udhaybhat00/copycat/issues).
+- **Licensing and purchases:** [udhaybhat00@gmail.com](mailto:udhaybhat00@gmail.com).
+- **Downloads and release notes:** [Copycat releases](https://github.com/udhaybhat00/copycat/releases).
 
-Get a key: **udhaybhat00@gmail.com**
-
-## Frequently asked questions
-
-**Is Copycat free?**
-Yes. Copycat is free to download and use. Copycat Pro is an optional paid upgrade unlocked with a license key.
-
-**Does Copycat work offline?**
-Transcription and meeting memory are **local-first** and run on your own machine. AI answer generation uses your own LLM provider, so those requests need internet access unless you point them at a local model.
-
-**Is my audio uploaded anywhere?**
-No. Audio is transcribed **on-device** with Whisper. Only the text you choose to send to your configured LLM provider leaves your machine.
-
-**Which Macs are supported?**
-macOS 12+ on **Apple Silicon (M1/M2/M3/M4)** and **Intel** Macs. Download the `arm64` build for Apple Silicon and the Intel build for older Macs.
-
-**Do I need an OpenAI or Anthropic API key?**
-Yes — Copycat uses **BYOK (bring your own key)** so you stay in control of your LLM provider and usage costs.
-
-**Is there a Windows version?**
-Yes. v1.0.0 ships a **Windows 10/11 (x64)** installer and a portable build — see [Installation on Windows](#installation-on-windows).
-
-**Why does macOS say the developer cannot be verified?**
-The app is not notarized yet. Right-click → **Open** on first launch to bypass Gatekeeper for this build.
-
-**How do I get a Copycat Pro key?**
-Email **udhaybhat00@gmail.com** to request a key.
-
-## Privacy & security
-
-Copycat is built **local-first**:
-
-- Audio capture and **on-device transcription** stay on your own device.
-- Transcripts and meeting memory are stored locally on your device.
-- LLM calls run with **your own API keys (BYOK)** — you choose the provider.
-- No account is required to download or use the free app.
-
-## Auto-updates
-
-Each platform ships its own auto-update archive: the `.zip` assets on macOS, the `.exe` installers on Windows, plus the matching `latest-mac.yml` / `latest.yml` manifest. Install Copycat once from the installer (`.dmg` or `.exe`); future releases are delivered through the app's built-in updater, or by downloading the newest build here.
-
-## Support
-
-- **Bugs & feature requests:** [open an issue](https://github.com/udhaybhat00/copycat/issues)
-- **License keys & activation help:** **udhaybhat00@gmail.com**
-- **Website:** [udhaybhat00.github.io/copycat](https://udhaybhat00.github.io/copycat/)
-
-## About this repository
-
-This repository is the **official distribution hub** for Copycat. It publishes:
-
-- macOS installers (`.dmg`) for Intel and Apple Silicon
-- Windows installers (`Copycat-Setup-1.0.0.exe`) and a portable build (`Copycat.1.0.0.exe`)
-- Auto-update archives (`.zip`) and the `latest-mac.yml` / `latest.yml` update manifests
-- Release notes and version history
-
-**No application source code is published here.** For licensing, distribution, or partnership questions, contact **udhaybhat00@gmail.com**.
+When reporting a bug, include your app version, operating system, chip architecture, provider/model names, and steps to reproduce. Redact API keys, license keys, device IDs, and private conversation content from public reports.
 
 ---
 
-<sub>Copycat — free local-first AI meeting assistant for macOS and Windows · real-time interview assistant · on-device Whisper transcription · automatic meeting notes · RAG knowledge memory · bring your own LLM key (BYOK) · private, offline-capable AI for Apple Silicon, Intel Macs, and Windows 10/11 x64.</sub>
+<div align="center"><sub>Copycat · macOS & Windows · Made by <a href="https://github.com/udhaybhat00">Udhay Bhat</a><br>Proprietary application. This public repository distributes downloads and documentation only.</sub></div>
