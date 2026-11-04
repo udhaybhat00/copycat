@@ -1,0 +1,1 @@
+document.querySelectorAll('.guide-toc a').forEach(link=>link.addEventListener('click',()=>{document.querySelectorAll('.guide-toc a').forEach(item=>item.removeAttribute('aria-current'));link.setAttribute('aria-current','location');}));
