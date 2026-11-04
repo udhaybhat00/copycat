@@ -1,0 +1,48 @@
+name: Distribute verified installers
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Installer manifest with temporary binary download links and expected SHA-256 checksums
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: copycat-installer-distribution
+  cancel-in-progress: false
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: udhaybhat00/copycat
+      MANIFEST: ${{ inputs.manifest }}
+    steps:
+      - name: Transfer and verify release binaries
+        shell: python
+        run: |
+          import os,json,subprocess,urllib.request,urllib.parse,hashlib,tempfile,pathlib
+          manifest=json.loads(os.environ['MANIFEST'])
+          release='repos/udhaybhat00/copycat/releases/427529865'
+          def api(path):return json.loads(subprocess.check_output(['gh','api',path],text=True))
+          existing={a['name']:a for a in api(release)['assets']}
+          for a in manifest:
+            name=a['name']
+            assert '/' not in name and '\\' not in name
+            assert name.endswith(('.dmg','.zip','.exe','.blockmap')) or name in ('latest.yml','latest-mac.yml')
+            if existing.get(name,{}).get('digest')==a['digest']:continue
+            url=a['download']
+            print('::add-mask::'+url,flush=True)
+            assert urllib.parse.urlparse(url).hostname=='release-assets.githubusercontent.com'
+            with tempfile.TemporaryDirectory() as folder:
+              path=pathlib.Path(folder)/name
+              digest=hashlib.sha256();size=0
+              with urllib.request.urlopen(url,timeout=180) as response,path.open('wb') as out:
+                while data:=response.read(1024*1024):out.write(data);digest.update(data);size+=len(data)
+              assert size==a['size'] and 'sha256:'+digest.hexdigest()==a['digest'],name+' checksum mismatch'
+              subprocess.run(['gh','release','upload','v1.1.0',str(path),'--clobber'],check=True)
+              print('Verified and uploaded '+name,flush=True)
+          public={a['name']:a for a in api(release)['assets']}
+          for a in manifest:assert public.get(a['name'],{}).get('digest')==a['digest'],a['name']+' missing or mismatched'
+          print('Every installer and update manifest matches the private build checksums.')
