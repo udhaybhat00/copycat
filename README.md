@@ -16,7 +16,7 @@ Live transcription, relevant context, and a clear space for answers — built fo
 
 **10-minute free trial · $20/month after the trial · BYOK**
 
-[Website](https://copycat-by-udhay.netlify.app/) · [Setup guides](https://copycat-by-udhay.netlify.app/guides/) · [Download](https://github.com/udhaybhat00/copycat/releases/latest) · [Pricing & activation](#-pricing--activation) · [Privacy](#-privacy-by-configuration) · [Support](#-support)
+[Website](https://copycat.isroot.in/) · [Setup guides](https://copycat.isroot.in/guides/) · [Download](https://github.com/udhaybhat00/copycat/releases/latest) · [Pricing & activation](#-pricing--activation) · [Privacy](#-privacy-by-configuration) · [Support](#-support)
 
 </div>
 

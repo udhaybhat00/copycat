@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://copycat-by-udhay.netlify.app/sitemap.xml
+Sitemap: https://copycat.isroot.in/sitemap.xml
