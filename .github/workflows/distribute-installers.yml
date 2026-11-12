@@ -31,7 +31,8 @@ jobs:
           manifest=json.loads(os.environ['MANIFEST'])
           tag=os.environ['RELEASE_TAG']
           assert tag.startswith('v') and all(c.isdigit() or c in 'v.-' for c in tag)
-          release='repos/udhaybhat00/copycat/releases/tags/'+tag
+          release_id=json.loads(subprocess.check_output(['gh','release','view',tag,'--json','databaseId'],text=True))['databaseId']
+          release='repos/udhaybhat00/copycat/releases/'+str(release_id)
           def api(path):return json.loads(subprocess.check_output(['gh','api',path],text=True))
           existing={a['name']:a for a in api(release)['assets']}
           for a in manifest:
