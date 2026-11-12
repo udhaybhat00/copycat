@@ -69,9 +69,9 @@ Open the [latest release](https://github.com/udhaybhat00/copycat/releases/latest
 
 | Device | Choose |
 | --- | --- |
-| 🍎 **Mac with Apple Silicon** | [⬇️ Download for Apple Silicon](https://github.com/udhaybhat00/copycat/releases/download/v1.1.0/Copycat-1.1.0-arm64.dmg) |
-| 💻 **Mac with an Intel processor** | [⬇️ Download for Intel Mac](https://github.com/udhaybhat00/copycat/releases/download/v1.1.0/Copycat-1.1.0.dmg) |
-| 🪟 **Windows 10/11, x64** | [⬇️ Download Windows installer](https://github.com/udhaybhat00/copycat/releases/download/v1.1.0/Copycat-Setup-1.1.0.exe) · [Portable](https://github.com/udhaybhat00/copycat/releases/download/v1.1.0/Copycat.1.1.0.exe) |
+| 🍎 **Mac with Apple Silicon** | [⬇️ Download for Apple Silicon](https://github.com/udhaybhat00/copycat/releases/download/v1.1.1/Copycat-1.1.1-arm64.dmg) |
+| 💻 **Mac with an Intel processor** | [⬇️ Download for Intel Mac](https://github.com/udhaybhat00/copycat/releases/download/v1.1.1/Copycat-1.1.1.dmg) |
+| 🪟 **Windows 10/11, x64** | [⬇️ Download Windows installer](https://github.com/udhaybhat00/copycat/releases/download/v1.1.1/Copycat-Setup-1.1.1.exe) · [Portable](https://github.com/udhaybhat00/copycat/releases/download/v1.1.1/Copycat.1.1.1.exe) |
 
 Available files, compatibility requirements, signing status, and known limitations are listed in each release. Download directly from this repository’s releases; do not install repackaged copies from other sites.
 
