@@ -2,6 +2,10 @@ name: Distribute verified installers
 on:
   workflow_dispatch:
     inputs:
+      tag:
+        description: Target release tag
+        required: true
+        default: v1.1.1
       manifest:
         description: Installer manifest with temporary binary download links and expected SHA-256 checksums
         required: true
@@ -17,6 +21,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GH_REPO: udhaybhat00/copycat
+      RELEASE_TAG: ${{ inputs.tag }}
       MANIFEST: ${{ inputs.manifest }}
     steps:
       - name: Transfer and verify release binaries
@@ -24,7 +29,9 @@ jobs:
         run: |
           import os,json,subprocess,urllib.request,urllib.parse,hashlib,tempfile,pathlib
           manifest=json.loads(os.environ['MANIFEST'])
-          release='repos/udhaybhat00/copycat/releases/427529865'
+          tag=os.environ['RELEASE_TAG']
+          assert tag.startswith('v') and all(c.isdigit() or c in 'v.-' for c in tag)
+          release='repos/udhaybhat00/copycat/releases/tags/'+tag
           def api(path):return json.loads(subprocess.check_output(['gh','api',path],text=True))
           existing={a['name']:a for a in api(release)['assets']}
           for a in manifest:
@@ -41,7 +48,7 @@ jobs:
               with urllib.request.urlopen(url,timeout=180) as response,path.open('wb') as out:
                 while data:=response.read(1024*1024):out.write(data);digest.update(data);size+=len(data)
               assert size==a['size'] and 'sha256:'+digest.hexdigest()==a['digest'],name+' checksum mismatch'
-              subprocess.run(['gh','release','upload','v1.1.0',str(path),'--clobber'],check=True)
+              subprocess.run(['gh','release','upload',tag,str(path),'--clobber'],check=True)
               print('Verified and uploaded '+name,flush=True)
           public={a['name']:a for a in api(release)['assets']}
           for a in manifest:assert public.get(a['name'],{}).get('digest')==a['digest'],a['name']+' missing or mismatched'
