@@ -27,7 +27,7 @@ jobs:
       - name: Transfer and verify release binaries
         shell: python
         run: |
-          import os,json,subprocess,urllib.request,urllib.parse,hashlib,tempfile,pathlib
+          import os,json,subprocess,urllib.request,urllib.parse,hashlib,tempfile,pathlib,base64,re
           manifest=json.loads(os.environ['MANIFEST'])
           tag=os.environ['RELEASE_TAG']
           assert tag.startswith('v') and all(c.isdigit() or c in 'v.-' for c in tag)
@@ -35,21 +35,32 @@ jobs:
           release='repos/udhaybhat00/copycat/releases/'+str(release_id)
           def api(path):return json.loads(subprocess.check_output(['gh','api',path],text=True))
           existing={a['name']:a for a in api(release)['assets']}
+          artifact_hashes={}
           for a in manifest:
             name=a['name']
             assert '/' not in name and '\\' not in name
             assert name.endswith(('.dmg','.zip','.exe','.blockmap')) or name in ('latest.yml','latest-mac.yml')
-            if existing.get(name,{}).get('digest')==a['digest']:continue
             url=a['download']
             print('::add-mask::'+url,flush=True)
             assert urllib.parse.urlparse(url).hostname=='release-assets.githubusercontent.com'
             with tempfile.TemporaryDirectory() as folder:
               path=pathlib.Path(folder)/name
-              digest=hashlib.sha256();size=0
+              digest=hashlib.sha256();sha512=hashlib.sha512();size=0
               with urllib.request.urlopen(url,timeout=180) as response,path.open('wb') as out:
-                while data:=response.read(1024*1024):out.write(data);digest.update(data);size+=len(data)
+                while data:=response.read(1024*1024):out.write(data);digest.update(data);sha512.update(data);size+=len(data)
               assert size==a['size'] and 'sha256:'+digest.hexdigest()==a['digest'],name+' checksum mismatch'
-              subprocess.run(['gh','release','upload',tag,str(path),'--clobber'],check=True)
+              artifact_hashes[name]=(base64.b64encode(sha512.digest()).decode(),size)
+              if name in ('latest.yml','latest-mac.yml'):
+                text=path.read_text()
+                entries=re.findall(r'(?m)^  - url: (.+)\n    sha512: (.+)\n    size: (\d+)',text)
+                assert entries,name+' has no valid updater entries'
+                for filename,expected_hash,expected_size in entries:
+                  assert artifact_hashes.get(filename)==(expected_hash,int(expected_size)),filename+' updater SHA-512/size mismatch'
+                target=re.search(r'(?m)^path: (.+)$',text).group(1)
+                top_hash=re.search(r'(?m)^sha512: (.+)$',text).group(1)
+                assert artifact_hashes[target][0]==top_hash,name+' top-level updater hash mismatch'
+              if existing.get(name,{}).get('digest')!=a['digest']:
+                subprocess.run(['gh','release','upload',tag,str(path),'--clobber'],check=True)
               print('Verified and uploaded '+name,flush=True)
           public={a['name']:a for a in api(release)['assets']}
           for a in manifest:assert public.get(a['name'],{}).get('digest')==a['digest'],a['name']+' missing or mismatched'
